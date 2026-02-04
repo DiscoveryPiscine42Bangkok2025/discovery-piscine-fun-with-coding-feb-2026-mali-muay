@@ -1,1 +1,1 @@
-(ls).Count
+ls | wc -l
