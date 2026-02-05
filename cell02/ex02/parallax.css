@@ -1,0 +1,42 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+.parallax-1, .parallax-2 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parallax-1 {
+    background-image: url('https://images.dmc.tv/wallpaper/raw/9960.jpg');
+}
+
+.parallax-2 {
+    background-image: url('https://cdn.pixabay.com/photo/2016/09/01/11/45/flower-1635923_1280.jpg');
+}
+.static-block {
+    height: 400px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+.static-block .heading {
+    background-color: transparent;
+    color: white;
+}
