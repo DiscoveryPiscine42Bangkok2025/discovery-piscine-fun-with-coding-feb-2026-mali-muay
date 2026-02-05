@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator Over 9000</title>
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; }
+        .calc-container { padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+    <div class="calc-container">
+        <input type="text" id="left" placeholder="Left member">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="right" placeholder="Right member">
+        <input type="submit" value="Try me!" onclick="calculate()">
+    </div>
+
+    <script>
+        function calculate() {
+            const leftVal = document.getElementById('left').value;
+            const rightVal = document.getElementById('right').value;
+            const op = document.getElementById('operator').value;
+
+            const isPositiveInt = (val) => /^\d+$/.test(val);
+
+            if (!isPositiveInt(leftVal) || !isPositiveInt(rightVal)) {
+                alert('Error :(');
+                return;
+            }
+
+            const left = parseInt(leftVal);
+            const right = parseInt(rightVal);
+            let result;
+
+            if ((op === '/' || op === '%') && right === 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            }
+
+            switch(op) {
+                case '+': result = left + right; break;
+                case '-': result = left - right; break;
+                case '*': result = left * right; break;
+                case '/': result = left / right; break;
+                case '%': result = left % right; break;
+            }
+
+            alert(result);
+            console.log(result);
+        }
+
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+</body>
+</html>
